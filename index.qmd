@@ -3,7 +3,7 @@ title: "Ecuador Land Finder"
 subtitle: "A tool to find land in continental Ecuador"
 format: #html #revealjs
   html: default
-  pdf: default
+  #pdf: default
 execute:
   echo: true
 # code_download: true
