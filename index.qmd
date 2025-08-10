@@ -1,11 +1,62 @@
 ---
-title: "LandFinderEcuador"
+title: "Ecuador Land Finder"
+subtitle: "A tool to find land in continental Ecuador"
+format: #html #revealjs
+  html: default
+  pdf: default
+execute:
+  echo: true
+# code_download: true
+# highlight: pygments
+image: ec.jpg
+about:
+  template: jolla
+  image-shape: rectangle
+  image-width: 15em
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/leninrafaelrierasegura
+    - icon: envelope
+      text: Email
+      href: mailto:leninrafael.rierasegura@kaust.edu.sa
+bibliography: 
+  - references.bib
+  - grateful-refs.bib
 ---
+
+# Introduction {.smaller}
+
+## Data
 
 This is a Quarto website.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>. [@arioli2018]
+
+See @fig-ec2
 
 ```{r}
-1 + 1
+#| label: fig-ec1
+#| fig-width: 0.2
+#| fig-asp: 0.1
+#| fig-cap: |
+#|   Ecuador Land Finder
+knitr::include_graphics(here::here("ec.jpg"))
+```
+
+```{r}
+#| label: fig-ec2
+#| fig-width: 0.2
+#| fig-asp: 0.1
+#| fig-cap: |
+#|   Ecuador Land Finder
+knitr::include_graphics(here::here("ec.jpg"))
+```
+
+# References {.smaller}
+
+## ref {.smaller}
+
+```{r}
+grateful::cite_packages(output = "paragraph", out.dir = ".")
 ```

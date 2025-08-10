@@ -3,18 +3,26 @@ project:
   output-dir: docs
 
 website:
-  title: "LandFinderEcuador"
+  title: "Ecuador Land Finder"
+  page-footer: "Made with Quarto"
   navbar:
     left:
       - href: index.qmd
         text: Home
       - about.qmd
+      - href: main.qmd
+        text: Main
 
 format:
   html:
+    respect-user-color-scheme: true
+    #backgroundcolor: "#eeffee"
+    #fontcolor: "#1BBC9D"
+    #linkcolor: "darkblue"
+    mainfont: "Gill Sans"
     theme:
-      - cosmo
-      - brand
+      light: flatly
+      dark: darkly
     css: styles.css
     toc: true
 
