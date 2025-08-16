@@ -1,5 +1,131 @@
 ---
-title: "main"
-format: html
+title: "Ecuador Land Finder"
+subtitle: "Visualization of the area of interest"
+format: html #revealjs
+execute:
+  echo: true
+  message: false
+  warning: false
+  include: true
+  eval: true
+  cache: false
+  fig.align: center
+  retina: 2
+  error: true
+  collapse: false
+bibliography: 
+  - references.bib
+  - grateful-refs.bib
 ---
+
+```{r}
+library(sf)
+library(tmap)
+library(mapview)
+```
+
+
+# Introduction
+
+Let us first show the area of interest. We show it at the four available levels: country, province, canton, and parish. The data is from the [GADM](https://gadm.org/) project, which provides high-resolution maps of administrative areas worldwide.
+
+```{r}
+# read the files
+gadm41_ECU_country <- readRDS("clean_data/gadm41_ECU_country_custom.rds")
+gadm41_ECU_provinces <- readRDS("clean_data/gadm41_ECU_province_custom.rds")
+gadm41_ECU_cantons <- readRDS("clean_data/gadm41_ECU_canton_custom.rds")
+gadm41_ECU_parishes <- readRDS("clean_data/gadm41_ECU_parish_custom.rds")
+# set mapview options
+mapviewOptions(basemaps = c("OpenStreetMap",
+                            "Esri.WorldImagery",
+                            "OpenTopoMap"))
+```
+
+# Visualization of the area of interest
+
+We choose the following polygon to delimit the area of interest. The polygon is defined by the coordinates of the four corners: Northeast, Southeast, Southwest, and Northwest.
+
+```{r}
+#| label: fig-ecu-map-polygon
+#| fig-cap: |
+#|   This shows the polygon that delimits the area of interest. Click on the region to see more details.
+NE <- c(-78.86238, 0.04550)
+SE <- c(-79.52285, -1.11994)
+SW <- c(-80.96772, -1.10722)
+NW <- c(-80.06668, 0.50266)
+coords <- rbind(NE, SE, SW, NW, NE)
+crop_polygon <- st_polygon(list(coords)) %>% 
+  st_sfc(crs = st_crs(gadm41_ECU_country)) # match CRS of your data
+crop_polygon_sf <- st_sf(geom = crop_polygon)
+mapview::mapview(crop_polygon_sf,
+                 alpha.regions = 0.4,    # fill transparency
+                 color = "black",        # border color
+                 alpha = 1,            # border transparency
+                 legend = FALSE)
+```
+
+
+## At the country level
+
+```{r}
+#| label: fig-ecu-map-level-country
+#| fig-cap: |
+#|   This shows the region of interest at the country level. Click on the region to see more details.
+mapview(
+  gadm41_ECU_country,
+  zcol = "COUNTRY",        # attribute used for fill
+  alpha.regions = 0.4,    # fill transparency
+  color = "black",        # border color
+  alpha = 1,            # border transparency
+  legend = FALSE           # remove legend
+)
+```
+
+## At the province level
+
+```{r}
+#| label: fig-ecu-map-level-provinces
+#| fig-cap: |
+#|   This shows the region of interest at the province level. Click on the region to see more details.
+mapview(
+  gadm41_ECU_provinces,
+  zcol = "NAME_1",        # attribute used for fill
+  alpha.regions = 0.4,    # fill transparency
+  color = "black",        # border color
+  alpha = 1,            # border transparency
+  legend = FALSE           # remove legend
+)
+```
+
+## At the canton level
+
+```{r}
+#| label: fig-ecu-map-level-cantons
+#| fig-cap: |
+#|   This shows the region of interest at the canton level. Click on the region to see more details.
+mapview(
+  gadm41_ECU_cantons,
+  zcol = "NAME_2",        # attribute used for fill
+  alpha.regions = 0.4,    # fill transparency
+  color = "black",        # border color
+  alpha = 1,            # border transparency
+  legend = FALSE           # remove legend
+)
+```
+
+## At the parish level
+
+```{r}
+#| label: fig-ecu-map-level-parishes
+#| fig-cap: |
+#|   This shows the region of interest at the parish level. Click on the region to see more details.
+mapview(
+  gadm41_ECU_parishes,
+  zcol = "NAME_3",        # attribute used for fill
+  alpha.regions = 0.4,    # fill transparency
+  color = "black",        # border color
+  alpha = 1,            # border transparency
+  legend = FALSE           # remove legend
+)
+```
 

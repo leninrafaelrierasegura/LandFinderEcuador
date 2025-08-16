@@ -11,7 +11,7 @@ website:
         text: Home
       - about.qmd
       - href: main.qmd
-        text: Main
+        text: Area
 
 format:
   html:

@@ -7,24 +7,59 @@
     "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
+    "objectID": "main.html",
+    "href": "main.html",
+    "title": "Ecuador Land Finder",
+    "section": "",
+    "text": "library(sf)\nlibrary(tmap)\nlibrary(mapview)"
+  },
+  {
+    "objectID": "main.html#at-the-country-level",
+    "href": "main.html#at-the-country-level",
+    "title": "Ecuador Land Finder",
+    "section": "At the country level",
+    "text": "At the country level\n\nmapview(\n  gadm41_ECU_country,\n  zcol = \"COUNTRY\",        # attribute used for fill\n  alpha.regions = 0.4,    # fill transparency\n  color = \"black\",        # border color\n  alpha = 1,            # border transparency\n  legend = FALSE           # remove legend\n)\n\n\n\n\n\n\n\nFigure 2: This shows the region of interest at the country level. Click on the region to see more details."
+  },
+  {
+    "objectID": "main.html#at-the-province-level",
+    "href": "main.html#at-the-province-level",
+    "title": "Ecuador Land Finder",
+    "section": "At the province level",
+    "text": "At the province level\n\nmapview(\n  gadm41_ECU_provinces,\n  zcol = \"NAME_1\",        # attribute used for fill\n  alpha.regions = 0.4,    # fill transparency\n  color = \"black\",        # border color\n  alpha = 1,            # border transparency\n  legend = FALSE           # remove legend\n)\n\n\n\n\n\n\n\nFigure 3: This shows the region of interest at the province level. Click on the region to see more details."
+  },
+  {
+    "objectID": "main.html#at-the-canton-level",
+    "href": "main.html#at-the-canton-level",
+    "title": "Ecuador Land Finder",
+    "section": "At the canton level",
+    "text": "At the canton level\n\nmapview(\n  gadm41_ECU_cantons,\n  zcol = \"NAME_2\",        # attribute used for fill\n  alpha.regions = 0.4,    # fill transparency\n  color = \"black\",        # border color\n  alpha = 1,            # border transparency\n  legend = FALSE           # remove legend\n)\n\n\n\n\n\n\n\nFigure 4: This shows the region of interest at the canton level. Click on the region to see more details."
+  },
+  {
+    "objectID": "main.html#at-the-parish-level",
+    "href": "main.html#at-the-parish-level",
+    "title": "Ecuador Land Finder",
+    "section": "At the parish level",
+    "text": "At the parish level\n\nmapview(\n  gadm41_ECU_parishes,\n  zcol = \"NAME_3\",        # attribute used for fill\n  alpha.regions = 0.4,    # fill transparency\n  color = \"black\",        # border color\n  alpha = 1,            # border transparency\n  legend = FALSE           # remove legend\n)\n\n\n\n\n\n\n\nFigure 5: This shows the region of interest at the parish level. Click on the region to see more details."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Ecuador Land Finder",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites. (Arioli and Benzi 2018)\nSee Figure 2\n\nknitr::include_graphics(here::here(\"ec.jpg\"))\n\n\n\n\n\n\n\nFigure 1: Ecuador Land Finder\n\n\n\n\n\n\nknitr::include_graphics(here::here(\"ec.jpg\"))\n\n\n\n\n\n\n\nFigure 2: Ecuador Land Finder"
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites. (Arioli and Benzi 2018)\nSee ?@fig-ec2\n{r}\n#| label: fig-ec1\n#| fig-width: 0.2\n#| fig-asp: 0.1\n#| fig-cap: |\n#|   Ecuador Land Finder\nknitr::include_graphics(here::here(\"ec.jpg\"))\n{r}\n#| label: fig-ec2\n#| fig-width: 0.2\n#| fig-asp: 0.1\n#| fig-cap: |\n#|   Ecuador Land Finder\nknitr::include_graphics(here::here(\"ec.jpg\"))"
   },
   {
     "objectID": "index.html#data",
     "href": "index.html#data",
     "title": "Ecuador Land Finder",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites. (Arioli and Benzi 2018)\nSee Figure 2\n\nknitr::include_graphics(here::here(\"ec.jpg\"))\n\n\n\n\n\n\n\nFigure 1: Ecuador Land Finder\n\n\n\n\n\n\nknitr::include_graphics(here::here(\"ec.jpg\"))\n\n\n\n\n\n\n\nFigure 2: Ecuador Land Finder"
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites. (Arioli and Benzi 2018)\nSee ?@fig-ec2\n{r}\n#| label: fig-ec1\n#| fig-width: 0.2\n#| fig-asp: 0.1\n#| fig-cap: |\n#|   Ecuador Land Finder\nknitr::include_graphics(here::here(\"ec.jpg\"))\n{r}\n#| label: fig-ec2\n#| fig-width: 0.2\n#| fig-asp: 0.1\n#| fig-cap: |\n#|   Ecuador Land Finder\nknitr::include_graphics(here::here(\"ec.jpg\"))"
   },
   {
     "objectID": "index.html#ref",
     "href": "index.html#ref",
     "title": "Ecuador Land Finder",
     "section": "ref",
-    "text": "ref\n\ngrateful::cite_packages(output = \"paragraph\", out.dir = \".\")\n\nWe used R version 4.3.2 (R Core Team 2023) and the following R packages: here v. 1.0.1 (Müller 2020), knitr v. 1.48 (Xie 2014, 2015, 2024), renv v. 1.0.7 (Ushey and Wickham 2024), rmarkdown v. 2.28 (Xie, Allaire, and Grolemund 2018; Xie, Dervieux, and Riederer 2020; Allaire et al. 2024)."
+    "text": "ref\n\ngrateful::cite_packages(output = \"paragraph\", out.dir = \".\")\n\nWe used R version 4.3.2 (R Core Team 2023) and the following R packages: mapview v. 2.11.2 (Appelhans et al. 2023), plotly v. 4.11.0 (Sievert 2020), renv v. 1.0.7 (Ushey and Wickham 2024), rmarkdown v. 2.28 (Xie, Allaire, and Grolemund 2018; Xie, Dervieux, and Riederer 2020; Allaire et al. 2024), sf v. 1.0.21 (Pebesma 2018; Pebesma and Bivand 2023), tidyverse v. 2.0.0 (Wickham et al. 2019), tmap v. 4.1 (Tennekes 2018)."
   }
 ]

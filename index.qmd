@@ -4,6 +4,15 @@ subtitle: "A tool to find land in continental Ecuador"
 format: html #revealjs
 execute:
   echo: true
+  message: false
+  warning: false
+  include: true
+  eval: true
+  cache: false
+  fig.align: center
+  retina: 2
+  error: true
+  collapse: false
 # code_download: true
 # highlight: pygments
 image: ec.jpg
@@ -33,7 +42,8 @@ To learn more about Quarto websites visit <https://quarto.org/docs/websites>. [@
 
 See @fig-ec2
 
-```{r}
+```
+{r}
 #| label: fig-ec1
 #| fig-width: 0.2
 #| fig-asp: 0.1
@@ -42,7 +52,8 @@ See @fig-ec2
 knitr::include_graphics(here::here("ec.jpg"))
 ```
 
-```{r}
+```
+{r}
 #| label: fig-ec2
 #| fig-width: 0.2
 #| fig-asp: 0.1
