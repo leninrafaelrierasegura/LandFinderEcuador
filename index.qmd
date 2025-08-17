@@ -40,27 +40,7 @@ This is a Quarto website.
 
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>. [@arioli2018]
 
-See @fig-ec2
 
-```
-{r}
-#| label: fig-ec1
-#| fig-width: 0.2
-#| fig-asp: 0.1
-#| fig-cap: |
-#|   Ecuador Land Finder
-knitr::include_graphics(here::here("ec.jpg"))
-```
-
-```
-{r}
-#| label: fig-ec2
-#| fig-width: 0.2
-#| fig-asp: 0.1
-#| fig-cap: |
-#|   Ecuador Land Finder
-knitr::include_graphics(here::here("ec.jpg"))
-```
 
 # References {.smaller}
 
