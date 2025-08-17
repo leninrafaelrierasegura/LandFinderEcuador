@@ -944,6 +944,21 @@
       ],
       "Hash": "05ce1ed077e8c97fbb3ec1cb078f1159"
     },
+    "osmextract": {
+      "Package": "osmextract",
+      "Version": "0.5.3",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "httr",
+        "jsonlite",
+        "sf",
+        "tools",
+        "utils"
+      ],
+      "Hash": "d35d4a8736d20456ea0ad93b258f067f"
+    },
     "pillar": {
       "Package": "pillar",
       "Version": "1.11.0",

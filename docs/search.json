@@ -11,7 +11,7 @@
     "href": "main.html",
     "title": "Ecuador Land Finder",
     "section": "",
-    "text": "library(sf)\nlibrary(tmap)\nlibrary(mapview)"
+    "text": "library(sf)\nlibrary(tmap)\nlibrary(mapview)\n\nsource(\"jobbers/custom_bounding_box.R\")"
   },
   {
     "objectID": "main.html#at-the-country-level",
@@ -60,6 +60,6 @@
     "href": "index.html#ref",
     "title": "Ecuador Land Finder",
     "section": "ref",
-    "text": "ref\n\ngrateful::cite_packages(output = \"paragraph\", out.dir = \".\")\n\nWe used R version 4.3.2 (R Core Team 2023) and the following R packages: mapview v. 2.11.2 (Appelhans et al. 2023), plotly v. 4.11.0 (Sievert 2020), renv v. 1.0.7 (Ushey and Wickham 2024), rmarkdown v. 2.28 (Xie, Allaire, and Grolemund 2018; Xie, Dervieux, and Riederer 2020; Allaire et al. 2024), sf v. 1.0.21 (Pebesma 2018; Pebesma and Bivand 2023), tidyverse v. 2.0.0 (Wickham et al. 2019), tmap v. 4.1 (Tennekes 2018)."
+    "text": "ref\n\ngrateful::cite_packages(output = \"paragraph\", out.dir = \".\")\n\nWe used R version 4.3.2 (R Core Team 2023) and the following R packages: mapview v. 2.11.2 (Appelhans et al. 2023), osmextract v. 0.5.3 (Gilardi and Lovelace 2025), plotly v. 4.11.0 (Sievert 2020), renv v. 1.0.7 (Ushey and Wickham 2024), rmarkdown v. 2.28 (Xie, Allaire, and Grolemund 2018; Xie, Dervieux, and Riederer 2020; Allaire et al. 2024), sf v. 1.0.21 (Pebesma 2018; Pebesma and Bivand 2023), tidyverse v. 2.0.0 (Wickham et al. 2019), tmap v. 4.1 (Tennekes 2018)."
   }
 ]

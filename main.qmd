@@ -22,6 +22,8 @@ bibliography:
 library(sf)
 library(tmap)
 library(mapview)
+
+source("jobbers/custom_bounding_box.R")
 ```
 
 
@@ -49,11 +51,7 @@ We choose the following polygon to delimit the area of interest. The polygon is 
 #| label: fig-ecu-map-polygon
 #| fig-cap: |
 #|   This shows the polygon that delimits the area of interest. Click on the region to see more details.
-NE <- c(-78.86238, 0.04550)
-SE <- c(-79.52285, -1.11994)
-SW <- c(-80.96772, -1.10722)
-NW <- c(-80.06668, 0.50266)
-coords <- rbind(NE, SE, SW, NW, NE)
+coords <- rbind(NE, SE, SW, NW, NE) # from source("jobbers/custom_bounding_box.R")
 crop_polygon <- st_polygon(list(coords)) %>% 
   st_sfc(crs = st_crs(gadm41_ECU_country)) # match CRS of your data
 crop_polygon_sf <- st_sf(geom = crop_polygon)
@@ -128,4 +126,8 @@ mapview(
   legend = FALSE           # remove legend
 )
 ```
+# References 
 
+```{r}
+grateful::cite_packages(output = "paragraph", out.dir = ".")
+```

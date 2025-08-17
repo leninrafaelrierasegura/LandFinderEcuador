@@ -4,6 +4,8 @@ library(plotly)
 library(tmap)
 library(dplyr)
 
+source("jobbers/custom_bounding_box.R")
+
 # Read layers
 gadm41_ECU_country_level <- st_read("crude_data/gadm41_ECU.gpkg", layer = "ADM_ADM_0")
 gadm41_ECU_province_level <- st_read("crude_data/gadm41_ECU.gpkg", layer = "ADM_ADM_1")
@@ -78,12 +80,7 @@ saveRDS(gadm41_ECU_canton_cropped, "clean_data/gadm41_ECU_canton_cropped.rds")
 saveRDS(gadm41_ECU_parish_cropped, "clean_data/gadm41_ECU_parish_cropped.rds")
 
 # Now i want a custom polygon to crop the data
-
-NE <- c(-78.86238, 0.04550)
-SE <- c(-79.52285, -1.11994)
-SW <- c(-80.96772, -1.10722)
-NW <- c(-80.06668, 0.50266)
-coords <- rbind(NE, SE, SW, NW, NE)
+coords <- rbind(NE, SE, SW, NW, NE) # from source("jobbers/custom_bounding_box.R")
 # Convert to an sf polygon
 crop_polygon <- st_polygon(list(coords)) %>% 
   st_sfc(crs = st_crs(gadm41_ECU_country_level_filtered)) # match CRS of your data
@@ -109,18 +106,18 @@ saveRDS(gadm41_ECU_parish_custom, "clean_data/gadm41_ECU_parish_custom.rds")
 
 
 # Optional: visualize
-tmap_mode("view")
-tmap_options(basemaps = c("OpenStreetMap", "Esri.WorldGrayCanvas", "Esri.WorldTopoMap"))
-tm_shape(gadm41_ECU_province_cropped) + tm_polygons("NAME_1", alpha = 0.4, border.col = "black", border.alpha = 0.8)
-mapview::mapviewOptions(basemaps = c("OpenStreetMap",
-                            "Esri.WorldImagery",
-                            "OpenTopoMap"))
-mapview::mapview(
-  gadm41_ECU_province_cropped,
-  zcol = "NAME_1",        # attribute used for fill
-  alpha.regions = 0.4,    # fill transparency
-  color = "black",        # border color
-  alpha = 0.8,             # border transparency
-  legend = FALSE          # show legend
-)
+# tmap_mode("view")
+# tmap_options(basemaps = c("OpenStreetMap", "Esri.WorldGrayCanvas", "Esri.WorldTopoMap"))
+# tm_shape(gadm41_ECU_province_cropped) + tm_polygons("NAME_1", alpha = 0.4, border.col = "black", border.alpha = 0.8)
+# mapview::mapviewOptions(basemaps = c("OpenStreetMap",
+#                             "Esri.WorldImagery",
+#                             "OpenTopoMap"))
+# mapview::mapview(
+#   gadm41_ECU_province_cropped,
+#   zcol = "NAME_1",        # attribute used for fill
+#   alpha.regions = 0.4,    # fill transparency
+#   color = "black",        # border color
+#   alpha = 0.8,             # border transparency
+#   legend = FALSE          # show legend
+# )
 
